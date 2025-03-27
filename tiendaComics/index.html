@@ -8,45 +8,84 @@
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
+    <!-- Header  -->
     <header id="header">
-      <h1>MultiVerso Cómics</h1>
-      <nav id="nav">
-        <ul>
-          <li class="list active">
-            <a href="#">
-              <span class="icon">
-                <img src="./img/house-solid.svg" alt="Home" />
-              </span>
-              <span class="text">Home</span>
-            </a>
-          </li>
-          <li class="list">
-            <a href="#">
-              <span class="icon">
-                <img src="./img/scroll-solid.svg" alt="About" />
-              </span>
-              <span class="text">About</span>
-            </a>
-          </li>
-          <li class="list">
-            <a href="#">
-              <span class="icon">
-                <img src="./img/book-solid.svg" alt="Shop" />
-              </span>
-              <span class="text">Shop</span>
-            </a>
-          </li>
-          <li class="list">
-            <a href="#">
-              <span class="icon">
-                <img src="./img/headset-solid.svg" alt="Help" />
-              </span>
-              <span class="text">Help</span>
-            </a>
-          </li>
-        </ul>
-        <button>Your Cart</button>
-      </nav>
+      <div class="header-container">
+        <div class="logo">
+          <a href="#">
+            <img src="./img/logo.png" alt="MultiVerso Cómics" />
+          </a>
+        </div>
+        <div class="search">
+          <img
+            class="icon-search"
+            src="./img/magnifying-glass-solid.svg"
+            alt="Search"
+          />
+          <input type="text" placeholder="Busca tu cómic" />
+          <button class="button">Buscar</button>
+        </div>
+        <!-- <h1>MultiVerso Cómics</h1> -->
+        <nav id="nav">
+          <ul>
+            <li class="list">
+              <a href="#">
+                <span class="icon">
+                  <img src="./img/house-solid.svg" alt="Home" />
+                </span>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#">
+                <span class="icon">
+                  <img src="./img/scroll-solid.svg" alt="About" />
+                </span>
+                <span class="text">Acerca</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#">
+                <span class="icon">
+                  <img src="./img/book-solid.svg" alt="Shop" />
+                </span>
+                <span class="text">Compra</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#">
+                <span class="icon">
+                  <img src="./img/headset-solid.svg" alt="Help" />
+                </span>
+                <span class="text">Ayuda</span>
+              </a>
+            </li>
+          </ul>
+          <div class="cart">
+            <div class="button-container-shop">
+              <a href="#" class="button-shop">
+                <div class="button-content-shop">
+                  <img
+                    class="cart-icon"
+                    src="./img/cart-shopping-solid.svg"
+                    alt="Cart"
+                  />
+                  <span class="button__text">Tu Carrito</span>
+
+                  <div class="button__reflection-1_shop"></div>
+                  <div class="button__reflection-2_shop"></div>
+                </div>
+
+                <div class="button__shadow-shop"></div>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
       <h2>¡Bienvenido a MultiVerso Cómics!</h2>
       <h3>Un universo de historias. Un multiverso de emociones.</h3>
       <div class="cards-container">
@@ -117,6 +156,72 @@
           <div class="button__shadow"></div>
         </a>
       </div>
-    </header>
+    </section>
+
+    <!-- Featured -->
+    <section class="featured">
+      <h2>Novedades</h2>
+      <div class="featured-products">
+        <div class="product">
+          <img src="./img/aliens-what-if.jpg" alt="Aliens. What if..?" />
+          <h3>Aliens. What if..?</h3>
+          <p>20€</p>
+        </div>
+        <div class="product">
+          <img
+            src="./img/el-inmortal-hulk-05-del-infierno-y-de-la-muerte-comic-marvel-now-deluxe.jpg"
+            alt="El importal Hulk #5"
+          />
+          <h3>El importal Hulk Vol. 05</h3>
+          <p>15€</p>
+        </div>
+        <div class="product">
+          <img src="./img/gantze-06.jpg" alt="Gantze #06" />
+          <h3>Gantze Vo. 06</h3>
+          <p>18€</p>
+        </div>
+        <div class="product">
+          <img
+            src="./img/grisly-unit-vol-02-transgenico.jpg"
+            alt="Grisly Unit Vol. 02"
+          />
+          <h3>Grisly Unit Vol. 02</h3>
+          <p>30€</p>
+        </div>
+        <!-- <div class="product">
+          <img src="./img/whodunnit.jpg" alt="whodunnit" />
+          <h3>whodunnit</h3>
+          <p>10€</p>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="newsletter-left">
+
+        <h2>Newsletter</h2>
+        <p>
+          ¡Sumérgete en un universo de aventuras! Suscríbete a nuestra newsletter
+          y recibe noticias exclusivas, reseñas y avances de tus cómics favoritos.
+          
+        </p>
+      </div>
+      <div class="newsletter-right">
+
+        <form>
+          <input type="email" placeholder="Correo electrónico" />
+          <a href="#" class="button">
+            <div class="button-container">
+              <div class="button__content">
+                <span class="button__text">Subscribete</span>
+                <div class="button__reflection-1"></div>
+                <div class="button__reflection-2"></div>
+              </div>
+            </div>
+          </a>
+        </form>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,0 +1,70 @@
+@use "../abstracts/variables";
+@use "../components/buttons";
+
+.newsletter {
+display: flex;
+justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  text-align: center;
+  background-color: #e9e9e9;
+}
+
+/* Columna izquierda: título y texto */
+.newsletter-left {
+    flex: 1; /* Ocupa el espacio necesario */
+    text-align: left;
+    margin-right: 2rem; /* Espacio entre columna izquierda y derecha (opcional) */
+  
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+      /* Ajusta color y tipografía */
+    }
+  
+    p {
+      margin: 0;
+      line-height: 1.5;
+      max-width: 400px; /* Ajusta el ancho del texto si deseas */
+      /* Ajusta color y tipografía */
+      
+    }
+  }
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  
+  input[type="email"] {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--black-color);
+    border-radius: 2rem;
+    font-size: 1rem;
+    outline: none;
+    background-color: var(
+      --gradient-color
+    ); /* Ajusta si quieres el degradado */
+    color: var(--black-color);
+    width: 250px;
+  }
+
+  /* Reutiliza la clase .button que ya definiste en ../components/buttons */
+  .button {
+    /* Ajusta tamaño si quieres un botón más pequeño o igual al principal */
+    position: relative;
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: var(
+      --gradient-color
+    );
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
