@@ -35,26 +35,87 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
   background: var(--gradient-color);
+  cursor: url("../../img/4.png"), auto;
+}
+
+section {
+  width: 100%;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 1rem 1rem; /* Espacio interno */
 }
 
 /*=============== GOOGLE FONTS ===============*/
 h1 {
   padding: 20px;
-  font-size: 160px;
-  color: white;
-  background-size: cover;
-  background-image: url("../../img/campamento-superheroes.jpg");
-  letter-spacing: 2px;
-  font-family: "Poppins", serif;
+  font-size: 40px;
 }
 
 a {
   text-decoration: none;
+}
+
+.product-grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* 1ª columna más ancha (producto grande) */
+  grid-template-rows: 1fr 1fr; /* 2 filas */
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e9e9e9;
+  padding: 1rem;
+  justify-content: center;
+}
+
+/* El primer producto (grande) ocupa 2 filas y la primera columna */
+.product-grid.big {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  text-align: center;
+}
+
+/* Los demás productos pequeños*/
+.product-grid.small {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Asignar cada producto pequeño a su celda específica */
+.product-grid.small:nth-of-type(2) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.product-grid.small:nth-of-type(3) {
+  /* 3er div.product-grid => col 3, row 1 */
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.product-grid.small:nth-of-type(4) {
+  /* 4to div.product-grid => col 2, row 2 */
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.product-grid.small:nth-of-type(5) {
+  /* 5to div.product-grid => col 3, row 2 */
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.product-grid > img {
+  display: block;
+  width: 80%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 0.5rem;
 }
 
 :root {
@@ -373,7 +434,8 @@ a {
   transform: rotate(-12deg) scale(1.1);
 }
 
-.header {
+header {
+  margin: 0 auto;
   max-width: 1200px;
   text-align: center;
   padding: 2rem 1rem;
@@ -519,12 +581,35 @@ li:hover {
 }
 
 .hero {
+  margin: 0 auto;
   max-width: 1200px;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   background-color: #e9e9e9;
 }
 
+.text-container {
+  display: inline-block;
+}
+
+.hero h3 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 5px solid;
+  animation: typing 3s 2.5s steps(22), cursor 4s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
 :root {
   /*=============== VARIABLES CARD ===============*/
   --primary-color: #ffbf03;
@@ -844,10 +929,10 @@ a {
 .newsletter {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 5rem 5rem;
   text-align: center;
   background-color: #e9e9e9;
 }
@@ -868,6 +953,13 @@ a {
   line-height: 1.5;
   max-width: 400px; /* Ajusta el ancho del texto si deseas */
   /* Ajusta color y tipografía */
+}
+
+.newsletter-right {
+  /* flex: 1; // opcional, si quieres equilibrar anchos */
+  display: flex; /* Para que el form no se expanda en toda la columna */
+  justify-content: flex-end;
+  /* O `justify-content: flex-start;` si quieres que el form se pegue a la izquierda de la columna */
 }
 
 form {
@@ -897,6 +989,119 @@ form .button {
   background-color: var(--gradient-color);
   font-weight: 700;
   font-size: 1rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #e9e9e9;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 4rem 1rem;
+}
+
+.about h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+:root {
+  /*=============== VARIABLES CARD ===============*/
+  --primary-color: #ffbf03;
+  --secondary-color: #ff8d11;
+  /*=============== VARIABLES CARD ===============*/
+  --card-height: 300px;
+  --card-width: 200px;
+  /*=============== VARIABLES BUTTON ===============*/
+  /*Color(hue, saturation, lightness)*/
+  --gradient-color: linear-gradient(
+    90deg,
+    hsl(48, 100%, 50%) 0%,
+    hsl(28, 100%, 54%, 100%)
+  );
+  --black-color: hsl(225, 15%, 6%);
+  --reflection-color: hsla(48, 30%, 95%, 0.3);
+  --body-color: hsl(0, 0%, 100%);
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+  --text-color: #161616;
+  /*=============== VARIABLES NAVBAR ===============*/
+  --clr:#151F28;
+  --logo-height: 100px;
+  --logo-width: 100px;
+}
+
+footer {
+  padding: 2rem 5rem;
+  background-color: #e9e9e9;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: 0.5rem;
+}
+
+.footer-right {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-left img {
+  width: 80px;
+  height: auto;
+}
+
+.column h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.column li a {
+  text-decoration: none;
+  color: #333;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 1rem;
 }
 
 :root {
@@ -1220,7 +1425,6 @@ a {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  margin-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -1235,6 +1439,19 @@ a {
   perspective: 2500px;
   margin: 0 50px;
   border-radius: 5px;
+}
+
+.text-card {
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px var(--primary-color), 0px 0px 20px var(--primary-color), 0px 0px 40px var(--primary-color), 0px 0px 80px var(--primary-color);
 }
 
 .cover-image {
@@ -1319,6 +1536,7 @@ a {
 }
 
 .featured {
+  margin: 0 auto;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -1326,8 +1544,8 @@ a {
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
-  margin-top: 50px;
-  margin-bottom: 100px;
+  background-color: #e9e9e9;
+  padding: 2rem 1rem;
 }
 
 .featured h2 {
@@ -1336,7 +1554,6 @@ a {
 }
 
 .featured-products {
-  width: 70%;
   max-width: 800px;
   height: 400px;
   display: flex;
@@ -1352,6 +1569,7 @@ a {
   transition: all 400ms;
   cursor: pointer;
   padding: 1rem;
+  justify-content: center;
 }
 
 .product > img {

@@ -10,12 +10,13 @@
 @import 'base/base';
 
 // Layout
-// @import 'layout/grid';
+@import 'layout/grid';
 @import 'layout/header';
 @import 'layout/hero';
 @import 'layout/newsletter';
 @import 'layout/featured';
-// @import 'layout/footer';
+@import 'layout/about';
+@import 'layout/footer';
 // @import 'layout/sidebar';
 
 // Components
