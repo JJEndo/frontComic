@@ -1,4 +1,49 @@
-a {
-  text-decoration: none;
+@use "../abstracts/variables";
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  background: var(--gradient-color);
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Clase de utilidad para ocultar texto (accesibilidad) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Contenedor general de secciones */
+.section-container {
+  width: 100%;
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  @media (max-width: --breakpoint-lg) {
+    padding: 1.5rem 1rem;
+  }
+
+  @media (max-width: --breakpoint-sm) {
+    padding: 1rem;
+  }
+}

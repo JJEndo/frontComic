@@ -1,5 +1,4 @@
-@use "../abstracts/variables";
-@use "../base/base";
+@use "../abstracts/variables" as *;
 
 .button-container {
   height: 10vh;
@@ -8,21 +7,22 @@
   place-items: center;
 }
 
-.button-container-shop {
+.button-container-shop,
+.button-container-search {
+  height: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.button {
-  position: relative;
-  transition: transform 0.4s;
-}
-.button-shop {
+.button,
+.button-shop,
+.button-search {
   position: relative;
   transition: transform 0.4s;
 }
 
+/* Botón principal */
 .button__content {
   position: relative;
   background: var(--gradient-color);
@@ -32,8 +32,151 @@
   color: var(--black-color);
   display: flex;
   align-items: center;
-  column-gap: 0.5rem;
+  gap: 0.5rem;
   overflow: hidden;
+  font-size: 1rem;
+}
+
+.button.button-search {
+  .button__content {
+    padding: 0.5rem 1rem !important; 
+    border-radius: 1rem !important; 
+    border: 2px solid var(--black-color); 
+    font-size: 0.9rem; 
+  }
+}
+
+.button__text {
+  font-weight: 700;
+  z-index: 2;
+}
+
+/* Reflejos del botón */
+.button__reflection-1,
+.button__reflection-2 {
+  width: 8px;
+  height: 120px;
+  background-color: var(--reflection-color);
+  rotate: 30deg;
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: -180%;
+  margin: auto;
+  transition: left 0.6s cubic-bezier(0.2, 0.5, 0.2, 1.2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    background-color: var(--reflection-color);
+    height: 100%;
+  }
+}
+.button__reflection-1::after {
+  width: 26px;
+  left: 1.25rem;
+}
+.button__reflection-2::after {
+  width: 40px;
+  left: 0.8rem;
+}
+
+/* Figuras geométricas del botón */
+.button img {
+  position: absolute;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+.button__star-1 {
+  width: 20px;
+  top: -14px;
+  left: -16px;
+  transform: rotate(48deg) scale(0.1);
+}
+.button__star-2 {
+  width: 40px;
+  right: -10px;
+  top: -4px;
+  transform: rotate(-48deg) scale(0.1);
+}
+.button__circle-1,
+.button__circle-2 {
+  width: 8px;
+}
+.button__circle-1 {
+  top: -8px;
+  left: 58px;
+  transform: scale(0.1);
+}
+.button__circle-2 {
+  right: 34px;
+  bottom: -8px;
+  transform: scale(0.1);
+}
+.button__diamond {
+  width: 18px;
+  top: -18px;
+  right: 62px;
+  transform: scale(0.1);
+}
+.button__triangle {
+  width: 30px;
+  left: 15px;
+  bottom: -16px;
+  transform: rotate(-48deg) scale(0.1);
+}
+
+/* Sombra del botón */
+.button__shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--gradient-color);
+  padding: 1.25rem 3rem;
+  border-radius: 4rem;
+  border: 3px solid var(--black-color);
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+/* Hover */
+.button:hover .button__shadow {
+  transform: translate(-0.5rem, 0.5rem);
+}
+.button:hover .button__reflection-1 {
+  left: 120%;
+}
+.button:hover .button__reflection-2 {
+  left: -70%;
+}
+.button:hover {
+  transform: rotate(-4deg) scale(1.1);
+}
+.button:hover img {
+  opacity: 1;
+}
+.button:hover .button__star-1 {
+  transform: scale(1.1);
+  transition-delay: 0.1s;
+}
+.button:hover .button__star-2 {
+  transform: scale(1.1);
+}
+.button:hover .button__circle-1 {
+  transform: translateY(-8px) scale(1.1);
+  transition-delay: 0.1s;
+}
+.button:hover .button__circle-2 {
+  transform: translate(-20px, 20px) scale(1.1);
+}
+.button:hover .button__diamond {
+  transform: translateY(7px) rotate(-24deg) scale(1.1);
+}
+.button:hover .button__triangle {
+  transform: rotate(-12deg) scale(1.1);
 }
 
 .button-content-shop {
@@ -50,58 +193,6 @@
   font-size: 0.9rem;
 }
 
-
-.button__text {
-  font-weight: 700;
-}
-
-.button__icon {
-  font-size: 1.5rem;
-}
-
-.button__text,
-.button__icon {
-  position: relative;
-  z-index: 2;
-}
-
-/* Reflection shapes */
-.button__reflection-1,
-.button__reflection-2 {
-  width: 8px;
-  height: 120px;
-  background-color: var(--reflection-color);
-  rotate: 30deg;
-  position: absolute;
-  inset: 0;
-  top: 0;
-  left: -180%;
-  margin: auto;
-  transition: left 0.6s cubic-bezier(0.2, 0.5, 0.2, 1.2);
-}
-
-.button__reflection-1::after {
-  content: "";
-  width: 26px;
-  height: 100%;
-  background-color: var(--reflection-color);
-  position: absolute;
-  top: -1rem;
-  left: 1.25rem;
-}
-
-.button__reflection-2::after {
-  content: "";
-  width: 40px;
-  height: 100%;
-  background-color: var(--reflection-color);
-  position: absolute;
-  top: -1rem;
-  left: 0.8rem;
-}
-
- /* SHOP */
- 
 .button__reflection-1_shop,
 .button__reflection-2_shop {
   width: 4px;
@@ -116,94 +207,6 @@
   transition: left 0.6s cubic-bezier(0.2, 0.5, 0.2, 1.2);
 }
 
-
-.button__reflection-1-shop::after,
-.button__reflection-2-shop::after {
-  content: "";
-  position: absolute;
-  top: -0.5rem;     
-  background-color: var(--reflection-color);
-  height: 100%;    
-}
-
-
-.button__reflection-1-shop::after {
-  width: 16px;      
-  left: 0.5rem;
-}
-
-.button__reflection-2-shop::after {
-  width: 24px;     
-  left: 0.6rem;
-}
-
-/* Moving geometric shapes */
-.button img {
-  position: absolute;
-  opacity: 0;
-  transition: transform 0.5s, opacity 0.5s;
-}
-
-.button__star-1 {
-  width: 20px;
-  top: -14px;
-  left: -16px;
-  transform: rotate(48deg) scale(0.1);
-}
-
-.button__star-2 {
-  width: 40px;
-  right: -10px;
-  top: -4px;
-  transform: rotate(-48deg) scale(0.1);
-}
-
-.button__circle-1,
-.button__circle-2 {
-  width: 8px;
-}
-
-.button__circle-1 {
-  top: -8px;
-  left: 58px;
-  transform: scale(0.1);
-}
-
-.button__circle-2 {
-  right: 34px;
-  bottom: -8px;
-  transform: scale(0.1);
-}
-
-.button__diamond {
-  width: 18px;
-  top: -18px;
-  right: 62px;
-  transform: scale(0.1);
-}
-
-.button__triangle {
-  width: 30px;
-  left: 15px;
-  bottom: -16px;
-  transform: rotate(-48deg) scale(0.1);
-}
-
-/* Gradient shadow */
-.button__shadow {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: var(--gradient-color);
-  padding: 1.25rem 3rem;
-  border-radius: 4rem;
-  border: 3px solid var(--black-color);
-  z-index: -1;
-  transition: transform 0.3s;
-}
-
 .button__shadow-shop {
   width: 100%;
   height: 100%;
@@ -216,73 +219,27 @@
   border: 2px solid var(--black-color);
   z-index: -1;
   transition: transform 0.3s;
-  opacity: 0;;
-}
-
-/* View shadow gradient */
-.button:hover .button__shadow {
-  transform: translate(-0.5rem, 0.5rem);
+  opacity: 0;
 }
 
 .button-shop:hover .button__shadow-shop {
   transform: translate(-0.3rem, 0.3rem);
   opacity: 1;
 }
-
-/* Move reflection */
-.button:hover .button__reflection-1 {
+.button-shop:hover .button__reflection-1_shop {
   left: 120%;
 }
-
-.button:hover .button__reflection-2 {
+.button-shop:hover .button__reflection-2_shop {
   left: -70%;
-}
-/*shop*/
-.button:hover .button__reflection-1 {
-  left: 120%;
-}
-
-.button:hover .button__reflection-2 {
-  left: -70%;
-}
-
-
-
-
-/* View geometric shapes */
-.button:hover {
-  transform: rotate(-4deg) scale(1.1);
 }
 .button-shop:hover {
   transform: rotate(-4deg) scale(1.1);
 }
 
-.button:hover img {
-  opacity: 1;
-}
-
-.button:hover .button__star-1 {
-  transform: scale(1.1);
-  transition-delay: 0.1s;
-}
-
-.button:hover .button__star-2 {
-  transform: scale(1.1);
-}
-
-.button:hover .button__circle-1 {
-  transform: translateY(-8px) scale(1.1);
-  transition-delay: 0.1s;
-}
-
-.button:hover .button__circle-2 {
-  transform: translate(-20px, 20px) scale(1.1);
-}
-
-.button:hover .button__diamond {
-  transform: translateY(7px) rotate(-24deg) scale(1.1);
-}
-
-.button:hover .button__triangle {
-  transform: rotate(-12deg) scale(1.1);
+.button.add-to-cart .button__text {
+ 
+  //font-size: 1rem;; 
+  //border-radius: 1rem !important; 
+  //border: 2px solid var(--black-color); 
+  font-size: 0.9rem; 
 }

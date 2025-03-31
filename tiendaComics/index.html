@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MultiVerso Cómics</title>
+    <meta
+      name="description"
+      content="Tienda de cómics con las mejores historias del multiverso"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <!-- Header  -->
@@ -13,25 +19,59 @@
       <div class="header-container">
         <div class="logo">
           <a href="#">
-            <img src="./img/logo.png" alt="MultiVerso Cómics" />
+            <img
+              src="./img/logo.png"
+              alt="MultiVerso Cómics"
+              width="100"
+              height="100"
+            />
           </a>
         </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-button">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </label>
+
         <div class="search">
           <img
             class="icon-search"
             src="./img/magnifying-glass-solid.svg"
             alt="Search"
+            width="20"
+            height="20"
+            loading="lazy"
           />
-          <input type="text" placeholder="Busca tu cómic" />
-          <button class="button">Buscar</button>
+          <input
+            type="text"
+            placeholder="Busca tu cómic"
+            aria-label="Buscar cómics"
+          />
+          <div class="button-container-search">
+            <button class="button button-search">
+              <div class="button__content">
+                <span class="button__text">Buscar</span>
+                <div class="button__reflection-1"></div>
+                <div class="button__reflection-2"></div>
+              </div>
+            </button>
+          </div>
         </div>
-        <!-- <h1>MultiVerso Cómics</h1> -->
+
         <nav id="nav">
           <ul>
             <li class="list">
-              <a href="#">
+              <a href="#" aria-current="page">
                 <span class="icon">
-                  <img src="./img/house-solid.svg" alt="Home" />
+                  <img
+                    src="./img/house-solid.svg"
+                    alt="Home"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
                 </span>
                 <span class="text">Home</span>
               </a>
@@ -39,7 +79,13 @@
             <li class="list">
               <a href="#">
                 <span class="icon">
-                  <img src="./img/scroll-solid.svg" alt="About" />
+                  <img
+                    src="./img/scroll-solid.svg"
+                    alt="Acerca de"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
                 </span>
                 <span class="text">Acerca</span>
               </a>
@@ -47,7 +93,13 @@
             <li class="list">
               <a href="#">
                 <span class="icon">
-                  <img src="./img/book-solid.svg" alt="Shop" />
+                  <img
+                    src="./img/book-solid.svg"
+                    alt="Tienda"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
                 </span>
                 <span class="text">Compra</span>
               </a>
@@ -55,7 +107,13 @@
             <li class="list">
               <a href="#">
                 <span class="icon">
-                  <img src="./img/headset-solid.svg" alt="Help" />
+                  <img
+                    src="./img/headset-solid.svg"
+                    alt="Ayuda"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
                 </span>
                 <span class="text">Ayuda</span>
               </a>
@@ -63,19 +121,20 @@
           </ul>
           <div class="cart">
             <div class="button-container-shop">
-              <a href="#" class="button-shop">
+              <a href="#" class="button-shop" aria-label="Carrito de compras">
                 <div class="button-content-shop">
                   <img
                     class="cart-icon"
                     src="./img/cart-shopping-solid.svg"
-                    alt="Cart"
+                    alt="Carrito de compras"
+                    width="20"
+                    height="20"
+                    loading="lazy"
                   />
                   <span class="button__text">Tu Carrito</span>
-
                   <div class="button__reflection-1_shop"></div>
                   <div class="button__reflection-2_shop"></div>
                 </div>
-
                 <div class="button__shadow-shop"></div>
               </a>
             </div>
@@ -95,73 +154,122 @@
           <h4>¡Nuevos lanzamientos!</h4>
         </div>
         <div class="cards-container">
-          <a href="#">
+          <a href="#" class="card-link">
             <div class="card">
               <div class="wrapper">
                 <img
                   src="./img/the-ultimates-01.jpg"
-                  alt="The Ultimates #1"
+                  alt="Portada de The Ultimates #1"
                   class="cover-image"
+                  width="200"
+                  height="300"
+                  loading="lazy"
                 />
               </div>
               <img
                 src="./img/The_ultimates_by_mrsteiners-d5ksb6t.webp"
                 alt="The Ultimates"
                 class="title"
+                loading="lazy"
               />
               <img
                 src="./img/58569c7a4f6ae202fedf2751.png"
                 alt="Iron-Man"
                 class="character"
+                loading="lazy"
               />
             </div>
           </a>
-          <a href="#">
+          <a href="#" class="card-link">
             <div class="card">
               <div class="wrapper">
                 <img
                   src="./img/marvel-must-have-lobezno-el-retorno.jpg"
-                  alt="Lobezno El Retorno "
+                  alt="Portada de Lobezno El Retorno"
                   class="cover-image"
+                  width="200"
+                  height="300"
+                  loading="lazy"
                 />
               </div>
               <img
                 src="./img/wolverine_logo_png_2024_by_wcwjunkbox_dhfyftz.png"
                 alt="Lobezno El Retorno"
                 class="title"
+                loading="lazy"
               />
               <img
                 src="./img/Wolverine.webp"
-                alt="Iron-Man"
+                alt="Lobezno"
                 class="character"
+                loading="lazy"
               />
             </div>
           </a>
-          <a href="#">
+          <a href="#" class="card-link">
             <div class="card">
               <div class="wrapper">
-                <img src="./img/eat.jpg" alt="eat" class="cover-image" />
+                <img
+                  src="./img/eat.jpg"
+                  alt="Portada de Lobo"
+                  class="cover-image"
+                  width="200"
+                  height="300"
+                  loading="lazy"
+                />
               </div>
-              <img src="./img/lobo1.png" alt="Iron-Man" class="character" />
+              <img
+                src="./img/lobo1.png"
+                alt="Lobo"
+                class="character"
+                loading="lazy"
+              />
             </div>
           </a>
         </div>
         <div class="button-container">
           <a href="#" class="button">
             <div class="button__content">
-              <span class="button__text">Shop Now</span>
-
+              <span class="button__text">Compra Ahora</span>
               <div class="button__reflection-1"></div>
               <div class="button__reflection-2"></div>
             </div>
-
-            <img src="./img/star.png" alt="" class="button__star-1" />
-            <img src="./img/star.png" alt="" class="button__star-2" />
-            <img src="./img/circle.png" alt="" class="button__circle-1" />
-            <img src="./img/circle.png" alt="" class="button__circle-2" />
-            <img src="./img/diamond.png" alt="" class="button__diamond" />
-            <img src="./img/triangle.png" alt="" class="button__triangle" />
-
+            <img
+              src="./img/star.png"
+              alt=""
+              class="button__star-1"
+              loading="lazy"
+            />
+            <img
+              src="./img/star.png"
+              alt=""
+              class="button__star-2"
+              loading="lazy"
+            />
+            <img
+              src="./img/circle.png"
+              alt=""
+              class="button__circle-1"
+              loading="lazy"
+            />
+            <img
+              src="./img/circle.png"
+              alt=""
+              class="button__circle-2"
+              loading="lazy"
+            />
+            <img
+              src="./img/diamond.png"
+              alt=""
+              class="button__diamond"
+              loading="lazy"
+            />
+            <img
+              src="./img/triangle.png"
+              alt=""
+              class="button__triangle"
+              loading="lazy"
+            />
             <div class="button__shadow"></div>
           </a>
         </div>
@@ -171,39 +279,55 @@
     <!-- Featured -->
     <section class="featured">
       <div class="section-container">
-        <h2>Novedades</h2>
+        <div class="featured-header">
+          <h2>Novedades</h2>
+          <a href="#" class="see-all">Ver todo</a>
+        </div>
         <div class="featured-products">
-          <div class="product">
-            <img src="./img/aliens-what-if.jpg" alt="Aliens. What if..?" />
+          <article class="product">
+            <img
+              src="./img/aliens-what-if.jpg"
+              alt="Portada de Aliens. What if..?"
+              width="180"
+              height="270"
+              loading="lazy"
+            />
             <h3>Aliens. What if..?</h3>
             <p>20€</p>
-          </div>
-          <div class="product">
+          </article>
+          <article class="product">
             <img
               src="./img/el-inmortal-hulk-05-del-infierno-y-de-la-muerte-comic-marvel-now-deluxe.jpg"
-              alt="El importal Hulk #5"
+              alt="Portada de El importal Hulk #5"
+              width="180"
+              height="270"
+              loading="lazy"
             />
             <h3>El importal Hulk Vol. 05</h3>
             <p>15€</p>
-          </div>
-          <div class="product">
-            <img src="./img/gantze-06.jpg" alt="Gantze #06" />
+          </article>
+          <article class="product">
+            <img
+              src="./img/gantze-06.jpg"
+              alt="Portada de Gantze #06"
+              width="180"
+              height="270"
+              loading="lazy"
+            />
             <h3>Gantze Vo. 06</h3>
             <p>18€</p>
-          </div>
-          <div class="product">
+          </article>
+          <article class="product">
             <img
               src="./img/grisly-unit-vol-02-transgenico.jpg"
-              alt="Grisly Unit Vol. 02"
+              alt="Portada de Grisly Unit Vol. 02"
+              width="180"
+              height="270"
+              loading="lazy"
             />
             <h3>Grisly Unit Vol. 02</h3>
             <p>30€</p>
-          </div>
-          <!-- <div class="product">
-            <img src="./img/whodunnit.jpg" alt="whodunnit" />
-            <h3>whodunnit</h3>
-            <p>10€</p>
-          </div> -->
+          </article>
         </div>
       </div>
     </section>
@@ -220,16 +344,20 @@
       </div>
       <div class="newsletter-right">
         <form>
-          <input type="email" placeholder="Correo electrónico" />
-          <a href="#" class="button">
-            <div class="button-container">
-              <div class="button__content">
-                <span class="button__text">Subscribete</span>
-                <div class="button__reflection-1"></div>
-                <div class="button__reflection-2"></div>
-              </div>
+          <label for="email" class="visually-hidden">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+          />
+          <button type="submit" class="button">
+            <div class="button__content">
+              <span class="button__text">Subscribete</span>
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
             </div>
-          </a>
+          </button>
         </form>
       </div>
     </section>
@@ -237,49 +365,160 @@
     <!-- More Products -->
     <section class="more-products">
       <div class="product-grid-container">
-        <div class="product-grid big">
-          <img src="./img/whodunnit.jpg" alt="whodunnit" />
+        <article class="product-grid big">
+          <img
+            src="./img/whodunnit.jpg"
+            alt="Portada de Whodunnit"
+            width="400"
+            height="600"
+            loading="lazy"
+          />
           <h3>Whodunnite</h3>
           <p>30€</p>
-        </div>
-        <div class="product-grid small">
-          <img src="./img/whodunnit.jpg" alt="whodunnit" />
-          <h3>Whodunnite</h3>
+          <div class="star-rating">
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star">&#9734;</span>
+          </div>
+          <a href="#" class="button add-to-cart">
+            <div class="button__content">
+              <span class="button__text">Añadir a la cesta</span>
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
+            </div>
+          </a>
+        </article>
+        <article class="product-grid small">
+          <img
+            src="./img/buena-gente.jpg"
+            alt="Portada de Buena Gente"
+            width="200"
+            height="300"
+            loading="lazy"
+          />
+          <h3>Buena Gente</h3>
+          <p>20€</p>
+          <div class="star-rating">
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star">&#9734;</span>
+          </div>
+          <a href="#" class="button add-to-cart">
+            <div class="button__content">
+              <span class="button__text">Añadir a la cesta</span>
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
+            </div>
+          </a>
+        </article>
+        <article class="product-grid small">
+          <img
+            src="./img/happy-endings.jpg"
+            alt="Portada de Happy Endings"
+            width="200"
+            height="300"
+            loading="lazy"
+          />
+          <h3>Happy Endings</h3>
+          <p>10€</p>
+          <div class="star-rating">
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star">&#9734;</span>
+          </div>
+          <a href="#" class="button add-to-cart">
+            <div class="button__content">
+              <span class="button__text">Añadir a la cesta</span>
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
+            </div>
+          </a>
+        </article>
+        <article class="product-grid small">
+          <img
+            src="./img/invencible-1.jpg"
+            alt="Portada de Invencible #1"
+            width="200"
+            height="300"
+            loading="lazy"
+          />
+          <h3>Invencible Vol. 01</h3>
           <p>30€</p>
-        </div>
-        <div class="product-grid small">
-          <img src="./img/whodunnit.jpg" alt="whodunnit" />
-          <h3>Whodunnite</h3>
+          <div class="star-rating">
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star">&#9734;</span>
+          </div>
+          <a href="#" class="button add-to-cart">
+            <div class="button__content">
+              <span class="button__text">Añadir a la cesta</span>
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
+            </div>
+          </a>
+        </article>
+        <article class="product-grid small">
+          <img
+            src="./img/absolute-batman-1.jpg"
+            alt="Portada de Absolute Batman #1"
+            width="200"
+            height="300"
+            loading="lazy"
+          />
+          <h3>Absolute Batman Vol. 01</h3>
           <p>30€</p>
-        </div>
-        <div class="product-grid small">
-          <img src="./img/whodunnit.jpg" alt="whodunnit" />
-          <h3>Whodunnite</h3>
-          <p>30€</p>
-        </div>
-        <div class="product-grid small">
-          <img src="./img/whodunnit.jpg" alt="whodunnit" />
-          <h3>Whodunnite</h3>
-          <p>30€</p>
-        </div>
+          <div class="star-rating">
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star filled">&#9733;</span>
+            <span class="star">&#9734;</span>
+          </div>
+          <a href="#" class="button add-to-cart">
+            <div class="button__content">
+              <span class="button__text">Añadir a la cesta</span>
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
 
     <!-- About -->
     <section class="about">
       <h2>Acerca de Nosotros</h2>
-      <p>Somos un grupo de fans que cruzamos dimensiones, desde Gotham hasta Asgard, desde Ciudad Esmeralda hasta Namek, 
-        buscando las mejores historias para compartirlas contigo. Nuestro objetivo es simple: 
-        construir un refugio online donde los héroes, villanos, antihéroes y lectores podamos convivir en paz (o al menos hasta el próximo crossover)
-        Aquí no solo vendemos cómics. Creamos portales a otros mundos, alimentamos colecciones legendarias y rendimos tributo a cada viñeta que nos hizo soñar.</p>
+      <p>
+        Somos un grupo de fans que cruzamos dimensiones, desde Gotham hasta
+        Asgard, desde Ciudad Esmeralda hasta Namek, buscando las mejores
+        historias para compartirlas contigo. Nuestro objetivo es simple:
+        construir un refugio online donde los héroes, villanos, antihéroes y
+        lectores podamos convivir en paz (o al menos hasta el próximo crossover)
+        Aquí no solo vendemos cómics. Creamos portales a otros mundos,
+        alimentamos colecciones legendarias y rendimos tributo a cada viñeta que
+        nos hizo soñar.
+      </p>
       <address>1717 Harrison St, San Francisco, CA 94103</address>
     </section>
 
-  
     <footer>
-      <div class="footer-container">    
+      <div class="footer-container">
         <div class="footer-left">
-          <img src="./img/logo.png" alt="Logo" />
+          <img
+            src="./img/logo.png"
+            alt="Logo MultiVerso Cómics"
+            width="80"
+            height="80"
+            loading="lazy"
+          />
           <address>1717 Harrison St, San Francisco, CA 94103, USA</address>
         </div>
         <div class="footer-right">
@@ -312,14 +551,14 @@
           <div class="column">
             <h3>Find Us On</h3>
             <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Twitter</a></li>
+              <li><a href="#" aria-label="Facebook">Facebook</a></li>
+              <li><a href="#" aria-label="Instagram">Instagram</a></li>
+              <li><a href="#" aria-label="Twitter">Twitter</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <p>&copy; Multiverso Cómics</p>
+      <p>&copy; <span id="year"></span> Multiverso Cómics</p>
     </footer>
   </body>
 </html>

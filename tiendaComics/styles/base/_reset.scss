@@ -1,21 +1,31 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
-body {
-  margin: 0;
-  background: var(--gradient-color);
-  cursor: url("../../img/4.png"), auto;
+ul,
+ol {
+  list-style: none;
 }
 
-section {
-  width: 100%;
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto; /* Centra horizontalmente */
-  padding: 1rem 1rem; /* Espacio interno */
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }

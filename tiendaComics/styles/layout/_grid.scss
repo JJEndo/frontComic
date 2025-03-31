@@ -1,62 +1,95 @@
+@use "../abstracts/variables" as *;
+
 .product-grid-container {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr; /* 1ª columna más ancha (producto grande) */
   grid-template-rows: 1fr 1fr; /* 2 filas */
   gap: 1rem;
-  max-width: 1200px;
+  max-width: $breakpoint-xl;
   margin: 0 auto;
-  background-color: #e9e9e9;
+  background-color: var(--gray-light);
   padding: 1rem;
   justify-content: center;
-}
 
+  @media (max-width: $breakpoint-md) {
+    /* En pantallas pequeñas apilamos en 1 columna */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
 /* El primer producto (grande) ocupa 2 filas y la primera columna */
 .product-grid.big {
   grid-column: 1/2;
   grid-row: 1/3;
-  //border: 1px solid var(--black-color);
   text-align: center;
+  border: solid 1px var(--border-image);
+  border-radius: 0.5rem;
+  justify-items: center;
+  padding-top: 2rem;
+  &:hover {
+    flex: 1;
+    border-color: var(--primary-color);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
 }
 
 /* Los demás productos pequeños*/
 .product-grid.small {
-  //border: 1px solid var(--black-color);
+  border: solid 1px var(--border-image);
+  border-radius: 0.5rem;
   padding: 1rem;
   text-align: center;
+  justify-items: center;
+  &:hover {
+    flex: 1;
+    border-color: var(--primary-color);
+  }
 }
 
-/* Asignar cada producto pequeño a su celda específica */
+/* Asignación de celdas */
 .product-grid.small:nth-of-type(2) {
   grid-column: 2/3;
   grid-row: 1/2;
+
+  @media (max-width: $breakpoint-md) {
+    grid-column: 1/2;
+    grid-row: auto;
+  }
 }
 
 .product-grid.small:nth-of-type(3) {
-  /* 3er div.product-grid => col 3, row 1 */
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
+  grid-column: 3/4;
+  grid-row: 1/2;
+
+  @media (max-width: $breakpoint-md) {
+    grid-column: 1/2;
+    grid-row: auto;
+  }
 }
 
 .product-grid.small:nth-of-type(4) {
-  /* 4to div.product-grid => col 2, row 2 */
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  @media (max-width: $breakpoint-md) {
+    grid-column: 1/2;
+    grid-row: auto;
+  }
 }
 
 .product-grid.small:nth-of-type(5) {
-  /* 5to div.product-grid => col 3, row 2 */
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-}
+  grid-column: 3/4;
+  grid-row: 2/3;
 
-// .product-grid {
-//   flex: 1 1 18px;
-//   height: 100%;
-//   transition: all 400ms;
-//   cursor: pointer;
-//   padding: 1rem;
-//   justify-content: center;
-// }
+  @media (max-width: $breakpoint-md) {
+    grid-column: 1/2;
+    grid-row: auto;
+  }
+}
 
 .product-grid > img {
   display: block;
@@ -64,4 +97,15 @@
   height: auto;
   object-fit: contain;
   margin-bottom: 0.5rem;
+}
+
+.more-products .star-rating {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+.more-products .star-rating .star:not(.filled) {
+  color: var(--secondary-color);
 }
