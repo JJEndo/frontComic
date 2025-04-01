@@ -106,9 +106,9 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 2rem;
-  background-color: var(--border-image);
-  border-radius: 0.5rem;
+  border-bottom: 1px solid var(--border-image);
 }
+
 
 .featured-header h2 {
   margin: 0;

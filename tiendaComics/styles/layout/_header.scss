@@ -20,7 +20,7 @@ header {
   padding: 1rem;
   background-color: var(--gray-light);
 
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
     flex-direction: column;
     padding: 1rem 0.5rem;
   }

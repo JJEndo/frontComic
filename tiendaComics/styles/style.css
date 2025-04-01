@@ -510,6 +510,19 @@ button {
   font-size: 0.9rem;
 }
 
+.add-to-cart {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.add-to-cart .button__content {
+  padding: 0.75rem 2rem;
+}
+
+.add-to-cart .button__text {
+  white-space: nowrap;
+}
+
 header {
   margin: 0 auto;
   max-width: 1200px;
@@ -528,7 +541,7 @@ header {
   padding: 1rem;
   background-color: var(--gray-light);
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .header-container {
     flex-direction: column;
     padding: 1rem 0.5rem;
@@ -912,8 +925,7 @@ li:hover {
   justify-content: space-between;
   width: 100%;
   margin-bottom: 2rem;
-  background-color: var(--border-image);
-  border-radius: 0.5rem;
+  border-bottom: 1px solid var(--border-image);
 }
 
 .featured-header h2 {
