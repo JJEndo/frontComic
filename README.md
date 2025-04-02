@@ -24,3 +24,12 @@ MultiVerso Cómics es una tienda online de cómics con un diseño moderno e inte
 
    ```bash
    git clone https://github.com/tu_usuario/multiverso-comics.git
+2. **CNavega al directorio del proyecto:**
+   ```bash
+   cd multiverso-comics
+3. **CNavega al directorio del proyecto:**
+   ```bash
+   npm install
+5. **Compila el SCSS a CSS (si es necesario):**
+   ```bash
+   npx sass --watch scss:styles
