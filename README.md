@@ -37,18 +37,3 @@ MultiVerso Cómics es una tienda online de cómics con un diseño moderno e inte
 ## Uso
 Abre el archivo index.html en tu navegador para ver el sitio. El diseño se adapta a distintos dispositivos gracias a las media queries definidas en el proyecto.
 
-##Estructura del Proyecto
-multiverso-comics/
-├── index.html         # Página principal
-├── about.html         # (Opcional) Página "Acerca de"
-├── styles/
-│   ├── style.css      # CSS compilado (output de SCSS)
-│   └── [otros archivos CSS]
-├── scss/              # Archivos fuente SCSS (partials organizados)
-│   ├── _reset.scss
-│   ├── _header.scss
-│   ├── _featured.scss
-│   ├── _newsletter.scss
-│   └── main.scss      # Archivo principal SCSS
-├── img/               # Imágenes y assets (logos, íconos, productos, etc.)
-└── README.md          # Este archivo
