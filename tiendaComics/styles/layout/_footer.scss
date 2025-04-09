@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 footer {
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   background-color: var(--gray-light);
   margin: 0 auto;
   max-width: $breakpoint-xl;
@@ -10,6 +10,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    justify-items: center;
     gap: 2rem;
     max-width: $breakpoint-xl;
     margin: 0 auto;
@@ -32,6 +33,7 @@ footer {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    justify-items: center;
   }
 
   .column {
@@ -59,7 +61,7 @@ footer {
     text-align: center;
     font-size: 0.85rem;
     color: #666;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   @media (max-width: $breakpoint-md) {

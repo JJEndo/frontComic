@@ -7,6 +7,7 @@ header {
   text-align: center;
   padding: 2rem 1rem;
   background-color: var(--gray-light);
+  position: relative; // Added for proper dropdown positioning
 }
 
 .header-container {
@@ -15,13 +16,12 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  //max-width: var(--breakpoint-xl);
   margin: 0 auto;
   padding: 1rem;
   background-color: var(--gray-light);
 
   @media (max-width: $breakpoint-lg) {
-    flex-direction: column;
+    flex-direction: row; // Changed from column to keep logo and hamburger in row
     padding: 1rem 0.5rem;
   }
 }
@@ -55,6 +55,12 @@ header {
   position: relative;
   width: 30px;
   height: 24px;
+  z-index: 10000; // Ensure it stays above other elements
+
+  @media (max-width: $breakpoint-md) {
+    display: block; /* se muestra en móvil */
+    order: 2; // Position after logo
+  }
 }
 
 .menu-line {
@@ -66,16 +72,10 @@ header {
   transition: 0.3s;
 }
 
-@media (max-width: $breakpoint-md) {
-  .menu-button {
-    display: block; /* se muestra en móvil */
-  }
-}
-
 nav {
-  order: 2;  /* Ajusta el orden en móvil */
   @media (max-width: $breakpoint-md) {
     width: 100%;
+    order: 4; // Position below search bar on mobile
   }
 }
 
@@ -84,26 +84,42 @@ nav {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   @media (max-width: $breakpoint-md) {
-    position: absolute;
-    top: 80px; 
-    right: -100%;
-    width: 60%;
-    height: calc(100vh - 80px);
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
     background: var(--gray-light);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem 1rem;
+    align-items: center;
+    padding: 0;
+    margin-top: 1rem;
+    gap: 0;
   }
 }
 
-/* Cuando se activa el checkbox #menu-toggle, movemos el nav dentro de la pantalla */
-#menu-toggle:checked ~ .menu-button + #nav {
+/* When menu is checked (open) */
+#menu-toggle:checked ~ #nav {
   @media (max-width: $breakpoint-md) {
-    right: 0;
+    max-height: 500px; // Adjust based on your content
+    padding: 1rem 0;
   }
+}
+
+/* Hamburger icon animation */
+#menu-toggle:checked ~ .menu-button .menu-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-toggle:checked ~ .menu-button .menu-line:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked ~ .menu-button .menu-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .search {
@@ -114,6 +130,7 @@ nav {
   align-items: center;
   gap: 0.5rem;
   position: relative;
+  order: 3; // Position after hamburger menu
 
   input[type="text"] {
     flex: 1;
@@ -145,7 +162,7 @@ nav {
   @media (max-width: $breakpoint-md) {
     order: 3;
     width: 100%;
-    //max-width: 100%;
+    margin-top: 1rem;
   }
 }
 
@@ -161,6 +178,7 @@ nav ul {
   @media (max-width: $breakpoint-md) {
     flex-direction: column;
     width: 100%;
+    gap: 0.5rem;
   }
 }
 
@@ -173,6 +191,14 @@ li.list {
   cursor: pointer;
   perspective: 1000px;
   font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
 }
 
 .icon img {
@@ -197,5 +223,7 @@ li:hover {
     margin-left: 0;
     width: 100%;
     text-align: center;
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
   }
 }
